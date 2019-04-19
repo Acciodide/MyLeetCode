@@ -1,12 +1,34 @@
 ﻿// 0001_Two_Sum.cpp : 此文件包含 "main" 函数。程序执行将在此处开始并结束。
-//
+//Given an array of integers, return indices of the two numbers such that they add up to a specific target.
+//You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
 #include "pch.h"
 #include <iostream>
+#include <vector>
+using namespace std;
+class Solution {
+public:
+	vector<int> twoSum(vector<int>& nums, int target) {
+		vector<int> temp;
+		for (int i = 0; i < nums.size(); i++) {
+			for (int j = i + 1; j < nums.size(); j++) {
+				if (nums[j] == target - nums[i])					
+					temp.push_back(nums[i]);
+					temp.push_back(nums[j]);
+
+					return temp;
+			}
+		}
+	}
+};
 
 int main()
 {
-    std::cout << "Hello World!\n"; 
+	int nums[] = { 2, 7, 11, 15 };
+	int target = 9;
+	Solution a;
+	a.twoSum(&nums[], target);
+	return 0;
 }
 
 // 运行程序: Ctrl + F5 或调试 >“开始执行(不调试)”菜单
